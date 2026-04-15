@@ -1,6 +1,6 @@
 # Data Structures and Algorithms Lab 2: Sorting & Linked Lists
 
-## Student Information
+## Student Information:
 - **Student Name:** Nguyen Nguyen Khoi / Tran Ngoc Bach
 - **Student ID:** ITITWE24052 / ITCSIU24007
 
