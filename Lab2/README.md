@@ -30,15 +30,70 @@
    - Implementation: Merge sort on singly linked lists without built-in sorting
    - Includes explanation of why array-based sorting is unsuitable for linked lists
    - Tests: unsorted data, duplicates, already sorted data, single element, empty list
+   
+5. **Problem 2: Compare Advanced Sorts on Different Inputs (problem2/)
+Files: MergeSortCompare.java, QuickSortCompare.java, SortComparisonRunner.java
+Implementation: Manual Merge Sort and Quick Sort with instrumentation, without built-in sorting
+   - Compares Merge Sort and Quick Sort on multiple datasets:
+ - random
+ - already sorted
+ - reverse sorted
+ - many duplicates
+Reports:
+ - number of comparisons
+ - number of swaps/moves
+ - maximum recursion depth
+ - Includes short analysis of why the algorithms behave differently on different input patterns
+6. **Problem 4: De-duplicate a Contact List (problem4/)
+
+File: RemoveDuplicateList.java
+Implementation: Manual duplicate removal using HashSet, without built-in list utilities
+- Removes duplicate values from an unsorted singly linked list
+- Preserves the first occurrence of each value
+- Preserves the original relative order of first appearances
+Example:
+- Input: 5 → 1 → 5 → 2 → 1 → null
+- Output: 5 → 1 → 2 → null
+  
+7. ** Problem 6: Stable Partition Around Threshold x (problem6/)
+File: StablePartitionList.java
+Implementation: Manual stable partition using pointer rearrangement, without built-in list utilities
+- Rearranges nodes so that:
+ - all values < x come first
+ - all values >= x come after
+- Preserves the relative order inside each group
+- Reuses existing nodes instead of creating a new data structure
+Example:
+- Input: 3 → 5 → 8 → 5 → 10 → 2 → 1 → null, x = 5
+- Output: 3 → 2 → 1 → 5 → 8 → 5 → 10 → null
+
+8. **Problem 8: Detect and Fix a Cycle (problem8/)
+
+File: DetectAndFixCycle.java
+Implementation: Manual cycle detection and removal without built-in list utilities
+Detects whether a cycle exists in a linked list
+Finds the entry node of the cycle
+Fixes the list by removing the cycle and restoring a linear linked list
+Includes two approaches:
+HashSet-based approach using extra memory
+Floyd’s cycle detection algorithm using no extra memory beyond a few pointers
+Outputs:
+whether a cycle exists
+the cycle entry node value
+the final linear list after repair
 
 ## Compilation Instructions
 
 ### Compile All Problems
 ```bash
 javac -d bin src/problem1/*.java
+javac -d bin src/problem2/*.java
 javac -d bin src/problem3/*.java
+javac -d bin src/problem4/*.java
 javac -d bin src/Problem5/*.java
+javac -d bin src/problem6/*.java
 javac -d bin src/Problem7/*.java
+javac -d bin src/problem8/*.java
 ```
 
 ### Compile Specific Problem
@@ -46,14 +101,26 @@ javac -d bin src/Problem7/*.java
 # Problem 1
 javac -d bin src/problem1/Ticket.java src/problem1/SortTicketSort.java
 
+# Problem 2
+javac -d bin src/problem2/MergeSortCompare.java src/problem2/QuickSortCompare.java src/problem2/SortComparisonRunner.java
+
 # Problem 3
 javac -d bin src/problem3/mergeSortLinkList.java
+
+# Problem 4
+javac -d bin src/problem4/RemoveDuplicateList.java
 
 # Problem 5
 javac -d bin src/Problem5/splitTwoHalves.java
 
+# Problem 6
+javac -d bin src/problem6/StablePartitionList.java
+
 # Problem 7
 javac -d bin src/Problem7/sortLinkList.java
+
+# Problem 8
+javac -d bin src/problem8/DetectAndFixCycle.java
 ```
 
 ## Run Instructions
@@ -69,14 +136,26 @@ cd Lab2
 # Problem 1
 java -cp bin problem1.SortTicketSort
 
+# Problem 2
+java -cp bin problem2.SortComparisonRunner
+
 # Problem 3
 java -cp bin problem3.mergeSortLinkList
+
+# Problem 4
+java -cp bin problem4.RemoveDuplicateList
 
 # Problem 5
 java -cp bin Problem5.splitTwoHalves
 
+# Problem 6
+java -cp bin problem6.StablePartitionList
+
 # Problem 7
 java -cp bin Problem7.sortLinkList
+
+# Problem 8
+java -cp bin problem8.DetectAndFixCycle
 ```
 
 ## Assumptions & Limitations
@@ -99,11 +178,15 @@ java -cp bin Problem7.sortLinkList
 ```
 Lab2/
 ├── README.md
-├── bin/              (compiled output)
+├── bin/                    (compiled output)
 ├── src/
-│   ├── problem1/     (Ticket sorting)
-│   ├── problem3/     (Merge sorted lists)
-│   ├── Problem5/     (Split into halves)
-│   └── Problem7/     (Sort linked list)
-└── lib/              (dependencies)
+│   ├── problem1/           (Ticket sorting)
+│   ├── problem2/           (Compare advanced sorts)
+│   ├── problem3/           (Merge sorted linked lists)
+│   ├── problem4/           (De-duplicate contact list)
+│   ├── Problem5/           (Split into halves)
+│   ├── problem6/           (Stable partition around x)
+│   ├── Problem7/           (Sort linked list)
+│   └── problem8/           (Detect and fix cycle)
+└── lib/                    (dependencies)
 ```
